@@ -1,6 +1,7 @@
 
 
 public class Apple extends Food {
+
     private String size = null;
 
     public Apple(String size) {
@@ -20,4 +21,5 @@ public class Apple extends Food {
     public void consume() {
         System.out.println(size + " " + this.toString() + " съедено");
     }
+
 }

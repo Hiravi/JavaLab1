@@ -18,4 +18,10 @@ public abstract class Food  implements Consumable {
     public String toString() {
         return name;
     }
+
+    public boolean equals(Object arg0){
+        if (!(arg0 instanceof Food)) return false;
+        if (name == null || ((Food) arg0).name == null) return false;
+        return name.equals(((Food) arg0).name);
+    }
 }
