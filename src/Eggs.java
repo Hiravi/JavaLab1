@@ -1,9 +1,9 @@
 
 public class Eggs extends Food {
 
-    int number;
+    String number;
 
-    public Eggs(int number) {
+    public Eggs(String number) {
         super("Яйцо");
         this.number = number;
     }
@@ -19,13 +19,10 @@ public class Eggs extends Food {
         return super.equals(obj);
     }
 
-
-
     @Override
     public void consume() {
         System.out.println(number + " " + this.toString() + " съедено");
     }
-
 
 }
 

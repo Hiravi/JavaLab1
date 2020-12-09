@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         int cheeseType = 0, appleType = 0, eggsType = 0;
         Cheese CompC = new Cheese(); // Создаем экземпляры класса, чтобы найти кол-во продуктов по типам
-        Eggs CompB = new Eggs(0);
+        Eggs CompB = new Eggs(null);
         Apple CompA = new Apple(null);
 
         Food[] breakfast = new Food[20];
@@ -15,7 +15,16 @@ public class Main {
                 breakfast[itemsSoFar] = new Cheese();
             }
             else if (parts[0].equals("Eggs")) {
-                breakfast[itemsSoFar] = new Eggs(1);
+                breakfast[itemsSoFar] = new Eggs(parts[1]);
+                if ("one".equals(parts[1])) {
+                    eggsType++;
+                }
+                else if ("two".equals(parts[1])) {
+                    eggsType += 2;
+                }
+                else if ("three".equals(parts[1])) {
+                    eggsType += 3;
+                }
             }
             else if (parts[0].equals("Apple")) {
                 breakfast[itemsSoFar] = new Apple(parts[1]);
@@ -29,9 +38,9 @@ public class Main {
                 if (breakfast[i].equals(CompC)) {
                     cheeseType++;
                 }
-                else if (breakfast[i].equals(CompB)) {
+               /* else if (breakfast[i].equals(CompB)) {
                     eggsType++;
-                }
+                }*/
                 else if (breakfast[i].equals(CompA)) {
                     appleType++;
                 }
